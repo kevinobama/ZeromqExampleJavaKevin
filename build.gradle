@@ -3,9 +3,14 @@ apply plugin: 'java-library'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
-    // Use jcenter for resolving your dependencies.
-    // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+     
+        mavenLocal()
+    	maven { url "http://180.167.141.114:1153/nexus/content/groups/public/" }
+//        maven { url "http://10.10.10.230:8081/nexus/content/groups/public/" }
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+ 
+        jcenter()
+        mavenCentral()    
 }
 
    
@@ -21,6 +26,14 @@ dependencies {
     
     // https://mvnrepository.com/artifact/org.zeromq/jeromq
 	compile group: 'org.zeromq', name: 'jeromq', version: '0.4.3'
-    
+      
+    // https://mvnrepository.com/artifact/org.knowm.xchange/xchange-core
+   compile group: 'org.knowm.xchange', name: 'xchange-core', version: '4.0.0'
+
+    compile 'org.knowm.xchange:xchange-binance:4.3.8-SNAPSHOT'
+    compile 'org.knowm.xchange:xchange-bitfinex:4.3.8-SNAPSHOT'
+    compile 'org.knowm.xchange:xchange-gateio:4.3.8-SNAPSHOT'
+    compile 'org.knowm.xchange:xchange-huobi:4.3.6'
+    compile 'org.knowm.xchange:xchange-tulipex:4.3.10.tulipexonline'      
 }
 
