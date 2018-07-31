@@ -8,6 +8,14 @@ public class SerializeDemo {
 	   serializing();
 	   
 	   deserializing();
+	   
+       byte b = 10; //declare a byte variable and assign the value i.e 10
+
+       Byte n1 = new Byte(b);
+       Byte n2 = new Byte("4");
+
+       System.out.println(n1); // print the value of byte variable n1        
+       System.out.println(n2);//print the value of byte variable n2
    }
    
    public static void serializing() {
@@ -23,6 +31,7 @@ public class SerializeDemo {
          out.writeObject(e);
          out.close();
          fileOut.close();
+         
          System.out.printf("Serialized data is saved in /tmp/employee.ser");
       } catch (IOException i) {
          i.printStackTrace();
